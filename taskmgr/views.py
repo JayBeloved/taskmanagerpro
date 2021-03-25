@@ -8,6 +8,7 @@ from .models import *
 
 # Input Classes
 
+
 class CategoryForm(ModelForm):
     class Meta:
         model = Categories
@@ -16,17 +17,21 @@ class CategoryForm(ModelForm):
 
 catform = CategoryForm()
 
+
 class TaskForm(ModelForm):
     class Meta:
         model = Tasklist
         fields = '__all__'
 
+
 tsform = TaskForm()
+
 
 class TodoForm(ModelForm):
     class Meta:
         model = Todo
         fields = '__all__'
+
 
 tdform = TodoForm()
 
@@ -34,10 +39,13 @@ tdform = TodoForm()
 # Create your views here.
 
 app_name = "taskmgr"
+
+
 def index(request):
     return render(request, "taskmgr/index.html", {
-        
+
     })
+
 
 def dashboard(request):
     return render(request, "taskmgr/dashboard.html", {
@@ -47,10 +55,12 @@ def dashboard(request):
         "activetasks": ActiveTasks.objects.all()
     })
 
+
 def new(request):
 
     return render(request, "taskmgr/new.html", {
     })
+
 
 def newcategory(request):
     if request.method == "POST":
@@ -102,7 +112,6 @@ def newtodo(request):
 
 
 def login(request):
-    return render(request, "taskmgr/login.html",{
+    return render(request, "taskmgr/login.html", {
 
     })
-

@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from taskmgr import urls, views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tasks/', include("tasks.urls")),
     path('taskmgr/', include("taskmgr.urls")),
+    # path('taskmgr/', taskmgr, name="taskmgr"),
+    path("", views.index, name="index"),
 ]

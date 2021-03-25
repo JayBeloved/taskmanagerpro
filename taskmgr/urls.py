@@ -12,4 +12,3 @@ urlpatterns = [
     path("new/task/", views.newtask, name="newtask"),
     path("new/todo/", views.newtodo, name="newtodo"),
 ]
-
