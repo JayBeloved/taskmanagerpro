@@ -1,0 +1,42 @@
+{% extends "taskmgr/static.html" %}
+
+{% load crispy_forms_tags %}
+
+**taskmgr/new.html**
+
+{% block content %}
+<div class="flex-item">
+    <div class="card" style="width: 18rem;">
+        <img src="" class="p" alt="">
+        <div class="card-body">
+            <h5 class="card-title">Categories</h5>
+            Define New Category
+            <a href="{% url 'taskmgr:newcategory' %}" class="btn btn-primary">Click To Define</a>
+        </div>
+    </div>
+</div>
+<div class="flex-item">
+    <div class="card" style="width: 18rem;">
+        <img src="" class="p" alt="">
+        <div class="card-body">
+            <h5 class="card-title">Tasks List</h5>
+            Add New Task
+            <a href="{% url 'taskmgr:newtask' %}" class="btn btn-primary">Click To Add</a>
+        </div>
+    </div>
+</div>
+<div class="flex-item">
+    <div class="card" style="width: 18rem;">
+        <img src="" class="p" alt="">
+        <div class="card-body">
+            <h5 class="card-title">To Do</h5>
+            Add New ToDo
+            <a href="{% url 'taskmgr:newtodo' %}" class="btn btn-primary">Click To Add</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'taskmgr/formlayout.html' %}
+{% load crispy_forms_tags %}
+
+{% load widget_tweaks %}
+
+**taskmgr/newtodo.html**
+
+{% block title %}New Todo{% endblock %}
+
+{% block form %}
+<form action="{% url 'taskmgr:newtodo' %}" , method="POST">
+    {% csrf_token %}
+    <h3>Add New ToDo</h3>
+    <div class="form-group">
+        <div class="form-wrapper">
+            {% for field in tdform.visible_fields %}
+            <label class="label">{{ field.label_tag }}</label>
+            <div>{% render_field field class="form-control" %}</div>
+            {% endfor %}
+        </div>
+    </div>
+    <input class="button" type="submit" value="Submit">
+</form>
+{% endblock %}

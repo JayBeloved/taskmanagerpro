@@ -1,0 +1,17 @@
+{% extends "tasks/layout.html" %}
+
+{% block content %}
+    <center>
+        <form action="{% url 'tasks:new' %}", method="POST">
+            <h1 class="form_inline">Add A New Task</h1>
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <div class="form-control">
+                    {{ form }}
+                </div>        
+            </div>
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+    </center>
+{% endblock %}

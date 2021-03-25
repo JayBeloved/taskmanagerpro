@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="{% static 'taskmgr/forms/formstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'taskmgr/styles.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="{% url 'taskmgr:index' %}">Home</a>
+                </div>
+    
+                <div class="nav-link-wrapper">
+                    <a href="">Login</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="{% url 'taskmgr:dashboard' %}">Dashboard</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="{% url 'taskmgr:new' %}">New Entry</a>
+                </div>
+            </div>
+    
+            <div class="right-side">
+                <div class="brand">
+                    <h2>Task Manager PRO</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="inner">
+            {% block form %}
+            {% endblock %}
+            </form>
+        </div>
+    </div>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

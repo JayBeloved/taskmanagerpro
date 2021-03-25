@@ -1,0 +1,48 @@
+{% extends "taskmgr/static.html" %}
+
+{% block content %}
+<div class="flex-item">
+    <div class="card" style="width: 18rem;">
+        <img src="" class="p" alt="">
+        <div class="card-body">
+            <h5 class="card-title">Categories</h5>
+            {% for category in categories %}
+            <p class="card-text">{{category.category}}.</p>
+            {% empty %}
+            <p class="card-text">No Categories.</p>
+            {% endfor %}
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</div>
+
+<div class="flex-item">
+    <div class="card" style="width: 18rem;">
+        <img src="" class="" alt="">
+        <div class="card-body">
+            <h5 class="card-title">ToDo Lists</h5>
+            {% for todo in todos %}
+            <p class="card-text">{{ todo.activity }}.</p>
+            {% empty %}
+            <p class="card-text">No Todo.</p>
+            {% endfor %}
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</div>
+
+<div class="flex-item">
+    <div class="card" style="width: 18rem;">
+        <img src="" class="" alt="">
+        <div class="card-body">
+            <h5 class="card-title">Tasks Lists</h5>
+            {% for task in tasks %}
+            <p class="card-text">{{ task.task }}.</p>
+            {% empty %}
+            <p class="card-text">No Tasks.</p>
+            {% endfor %}
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
